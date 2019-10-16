@@ -4,14 +4,14 @@ export const register = () => {
       const wb = new Workbox("/sw.js");
 
       wb.register()
-        .then(() => {
-          window.console.log("SW Registered");
+        .then(reg => {
+          window.console.log("SW Registered", reg);
         })
-        .catch(() => {
-          window.console.warn("Failed to register SW.");
+        .catch(err => {
+          window.console.warn("Failed to register SW.", err);
         });
     })
-    .catch(() => {
-      window.console.warn("Failed to load Workbox.");
+    .catch(err => {
+      window.console.warn("Failed to load Workbox.", err);
     });
 };

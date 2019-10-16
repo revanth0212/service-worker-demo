@@ -7,3 +7,11 @@ importScripts(
 self.addEventListener("install", event => {
   console.log("SW Installing");
 });
+
+self.addEventListener("waiting", () => {
+  console.log("SW Waiting");
+});
+
+self.addEventListener("activate", () => {
+  console.log("SW Active");
+});
